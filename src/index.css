@@ -1,13 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Plus-Jakrta-Sans-Bold;
+  src: url(../public/Fonts/PlusJakartaSans-Bold.ttf);
+}
+@font-face {
+  font-family: Plus-Jakrta-Sans-Regular;
+  src: url(../public/Fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  font-family: Plus-Jakrta-Sans-Medium;
+  src: url(../public/Fonts/PlusJakartaSans-Medium.ttf);
+}
+
+.font-medium {
+  font-family: Plus-Jakrta-Sans-Medium;
+}
+.font-bold {
+  font-family: Plus-Jakrta-Sans-Bold;
+}
+
+.burgerMenu {
+  filter: invert(100%) !important;
+}
+
 body {
+  font-family: Plus-Jakrta-Sans-Bold;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Plus-Jakrta-Sans-Regular;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  background: #ffd159;
+  width: 349px;
+  height: 350px;
+  border-radius: 50%;
+  left: -229px;
+  top: -110px;
+  z-index: 1;
 }
