@@ -1,4 +1,4 @@
-import { MeshDistortMaterial, Sphere } from "@react-three/drei";
+import { Sphere } from "@react-three/drei";
 import React, { useRef } from "react";
 
 export default function AnimatedSphere() {

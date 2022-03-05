@@ -1,7 +1,6 @@
 import { OrbitControls, RoundedBox, Sphere } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { Suspense } from "react";
-import AnimatedSphere from "../AnimatedShpere";
 import Astronaut from "../Astronaut";
 import Heading from "../Heading";
 import Star from "../Star";
@@ -63,7 +62,7 @@ const HeroSection = () => {
             <ambientLight intensity={0.5} />
             <pointLight position={[-10, -2, 5]} />
             <OrbitControls enableZoom={false} />
-            <Suspense fallback={null}>
+            <Suspense fallback={"Please wait loading ..."}>
               <Astronaut />
             </Suspense>
           </Canvas>
