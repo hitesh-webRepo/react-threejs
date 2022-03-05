@@ -42,7 +42,7 @@ const NavBar = () => {
               />
             </div>
           </div>
-          <button className="inline-flex md:block hidden  items-center bg-secondaryButton text-white border-0 py-2 text-xs font-semibold  px-4 focus:outline-none  rounded-md text-base mt-4  md:mt-0">
+          <button className="md:block hidden  items-center bg-secondaryButton text-white border-0 py-2 font-semibold  px-4 focus:outline-none  rounded-md text-base mt-4  md:mt-0">
             SCHEDULE DEMO
           </button>
         </div>
