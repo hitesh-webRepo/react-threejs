@@ -1,13 +1,35 @@
-import { Canvas } from "@react-three/fiber";
+import {
+  Box,
+  Cone,
+  MeshDistortMaterial,
+  OrbitControls,
+  PerspectiveCamera,
+  RoundedBox,
+  Sphere,
+  Tetrahedron,
+  Torus,
+} from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import AnimatedSphere from "../AnimatedShpere";
+import Earth from "../Earth";
 import Container from "../Container";
 import Heading from "../Heading";
 
 const HeroSection = () => {
   return (
-    <section className=" body-font">
-      <Container>
+    <section className="body-font relative">
+      <div className="absolute top-0 left-0 bottom-0 right-0 z-0">
+        <Canvas>
+          <OrbitControls enableZoom={false} />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[-10, -2, 5]} color="white" />
+          <Suspense fallback={null}>
+            <Background />
+          </Suspense>
+        </Canvas>
+      </div>
+      <div className="container mx-auto py-5 relative z-10 pointer-events-none ">
         <div className="grid grid-cols-2">
           <div className="w-full py-10">
             <h1
@@ -49,13 +71,14 @@ const HeroSection = () => {
             className="absolute -top-20 -right-40 -z-0"
             style={{ height: "700px", width: "800px" }}
           >
-            <Canvas>
-              <ambientLight intensity={0.1} />
-              <directionalLight position={[-10, -2, 5]} intensity={1} />
+            {/* <Canvas>
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[-10, -2, 5]} />
+              <OrbitControls enableZoom={false} />
               <Suspense fallback={null}>
                 <AnimatedSphere />
               </Suspense>
-            </Canvas>
+            </Canvas> */}
           </div>
         </div>
 
@@ -114,8 +137,28 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
+  );
+};
+
+const Background = () => {
+  useFrame(({ clock, camera }) => {
+    const time = clock.getElapsedTime();
+    camera.position.x = 5;
+    camera.position.y = 2;
+    if (time < 3) camera.position.z = time;
+  });
+
+  return (
+    <>
+      <RoundedBox position={[0, 3, 0]} scale={0.6}>
+        <meshPhongMaterial color={"#000"} />
+      </RoundedBox>
+      <Sphere position={[4, 2, 0]}>
+        <meshPhongMaterial color={"#db7019"} />
+      </Sphere>
+    </>
   );
 };
 

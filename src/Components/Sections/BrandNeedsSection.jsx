@@ -1,3 +1,4 @@
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import Container from "../Container";
@@ -10,6 +11,7 @@ const BrandNeedsSection = () => {
       <div className="bg-navyBlue relative text-white lg:mt-40 md:mt-20 rounded-max ">
         <div className="absolute -top-24 right-36" style={{ height: "250px" }}>
           <Canvas>
+            <OrbitControls enableZoom={false} />
             <ambientLight intensity={0.1} />
             <directionalLight position={[-5, -2, 3]} intensity={1} />
             <Suspense fallback={null}>
