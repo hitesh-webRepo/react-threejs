@@ -12,11 +12,11 @@ const HeroSection = () => {
     <section className="relative body-font w-full">
       <div className="absolute top-0 left-0 right-0 bottom-0">
         <Canvas>
-          <ambientLight intensity={0.5} color="#000000" />
-          <directionalLight position={[-10, -2, 5]} />
+          {/* <ambientLight intensity={0.5} color="#000000" />
+          <directionalLight position={[-10, -2, 5]} /> */}
           <Suspense fallback={null}>
             <Star />
-            <Rocket />
+            {/* <Rocket /> */}
           </Suspense>
         </Canvas>
       </div>
@@ -62,7 +62,7 @@ const HeroSection = () => {
           style={{ height: "700px", width: "800px" }}
         >
           <Canvas>
-            <ambientLight intensity={0.2} color="#ffffff" />
+            <ambientLight intensity={0.5} color="#ffffff" />
             <pointLight position={[0, 0, 3]} color="#FE703E" />
             <OrbitControls enableZoom={false} />
             <Suspense fallback={"Please wait loading ..."}>

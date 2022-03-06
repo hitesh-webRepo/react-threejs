@@ -28,19 +28,7 @@ const S = (props) => {
     if (ref.current.position.z > 10) ref.current.position.z = -100;
   });
 
-  return (
-    <Sphere {...props} ref={ref} args={[0.03]}>
-      <ambientLight color={"#000000"} />
-      <meshLambertMaterial
-        color={"#ffffff"}
-        emissive={"#ffffff"}
-        combine={MultiplyOperation}
-        fog={true}
-        reflectivity={1}
-        refractionRatio={1}
-      />
-    </Sphere>
-  );
+  return <Sphere {...props} ref={ref} args={[0.03]}></Sphere>;
 };
 
 export default Star;
