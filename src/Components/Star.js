@@ -1,6 +1,7 @@
 import { Sphere } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import React, { useRef } from "react";
+import { MultiplyOperation } from "three";
 
 const Star = () => {
   return (
@@ -29,7 +30,15 @@ const S = (props) => {
 
   return (
     <Sphere {...props} ref={ref} args={[0.03]}>
-      <meshBasicMaterial color={"#ffffff"} />
+      <ambientLight color={"#000000"} />
+      <meshLambertMaterial
+        color={"#ffffff"}
+        emissive={"#ffffff"}
+        combine={MultiplyOperation}
+        fog={true}
+        reflectivity={1}
+        refractionRatio={1}
+      />
     </Sphere>
   );
 };

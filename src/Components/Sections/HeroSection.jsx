@@ -1,24 +1,27 @@
 import { OrbitControls, RoundedBox, Sphere } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { Suspense } from "react";
-import Astronaut from "../Astronaut";
 import Heading from "../Heading";
 import Star from "../Star";
+
+const Astronaut = React.lazy(() => import("../Astronaut")); // Lazy-loaded
+const Rocket = React.lazy(() => import("../Nasa")); // Lazy-loaded
 
 const HeroSection = () => {
   return (
     <section className="relative body-font w-full">
       <div className="absolute top-0 left-0 right-0 bottom-0">
         <Canvas>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[-10, -2, 5]} />
+          <ambientLight intensity={0.5} color="#000000" />
+          <directionalLight position={[-10, -2, 5]} />
           <Suspense fallback={null}>
             <Star />
+            <Rocket />
           </Suspense>
         </Canvas>
       </div>
       <div className="grid grid-cols-2 px-12">
-        <div className="w-full py-10">
+        <div className="w-full py-10 relative z-50">
           <h1
             className="text-base  my-4 font-medium"
             style={{ color: "rgba(255,255,255,0.5)" }}
@@ -46,10 +49,10 @@ const HeroSection = () => {
             need it. Revolve is here to help you scale into the future.
           </p>
           <div className="flex">
-            <button className="inline-flex text-white bg-secondaryButton border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded-lg  font-semibold">
+            <button className="inline-flex text-white bg-secondaryButton border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded-lg  font-semibold text-sm">
               GET AN ESTIMATE{" "}
             </button>
-            <button className="ml-4 inline-flex text-white bg-primaryButton border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded-lg  font-semibold">
+            <button className="ml-4 inline-flex text-white bg-primaryButton border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded-lg  font-semibold text-sm">
               SCHEDULE A DEMO
             </button>
           </div>
@@ -59,8 +62,8 @@ const HeroSection = () => {
           style={{ height: "700px", width: "800px" }}
         >
           <Canvas>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[-10, -2, 5]} />
+            <ambientLight intensity={0.2} color="#ffffff" />
+            <pointLight position={[0, 0, 3]} color="#FE703E" />
             <OrbitControls enableZoom={false} />
             <Suspense fallback={"Please wait loading ..."}>
               <Astronaut />

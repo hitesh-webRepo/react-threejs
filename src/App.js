@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
 import NavBar from "./Components/NavBar";
-import HeroSection from "./Components/Sections/HeroSection";
-import CardsSection from "./Components/Sections/CardsSection";
-import BrandNeedsSection from "./Components/Sections/BrandNeedsSection";
 import AwardWinningSection from "./Components/Sections/AwardWinningSection";
+import BrandNeedsSection from "./Components/Sections/BrandNeedsSection";
+import CardsSection from "./Components/Sections/CardsSection";
+import HeroSection from "./Components/Sections/HeroSection";
 import OneCallWaySection from "./Components/Sections/OneCallWaySection";
 
 function App() {

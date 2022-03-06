@@ -42,7 +42,7 @@ const NavBar = () => {
               />
             </div>
           </div>
-          <button className="md:block hidden  items-center bg-secondaryButton text-white border-0 py-2 font-semibold  px-4 focus:outline-none  rounded-md text-base mt-4  md:mt-0">
+          <button className="bg-secondaryButton text-xs p-2 rounded-full font-medium">
             SCHEDULE DEMO
           </button>
         </div>

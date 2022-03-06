@@ -7,7 +7,7 @@ import OrangeSphere from "../OrangeSphere";
 
 const BrandNeedsSection = () => {
   return (
-    <Container>
+    <div className="w-full px-24">
       <div className="bg-navyBlue relative text-white lg:mt-40 md:mt-20 rounded-max ">
         <div className="absolute -top-24 right-36" style={{ height: "250px" }}>
           <Canvas>
@@ -20,7 +20,7 @@ const BrandNeedsSection = () => {
           </Canvas>
         </div>
 
-        <div className="px-10 py-20">
+        <div className="px-24 py-20">
           <div className="md:flex ">
             <div className="md:w-1/2 w-full md:px-10">
               <Heading text="How Lift fuels your brand needs" />
@@ -89,7 +89,7 @@ const BrandNeedsSection = () => {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
